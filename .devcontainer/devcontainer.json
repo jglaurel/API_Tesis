@@ -1,0 +1,23 @@
+{
+  "name": "api_tesis",
+  "build": {
+    // Si el devcontainer está en .devcontainer/devcontainer.json
+    // y el Dockerfile en la raíz del repo, esta ruta es correcta:
+    "dockerfile": "../Dockerfile"
+  },
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "python.defaultInterpreterPath": "/usr/local/bin/python3"
+      },
+      "extensions": [
+        "ms-python.python",
+        "ms-toolsai.jupyter",
+        "ms-python.vscode-pylance"
+      ]
+    }
+  },
+  // Redirigimos el puerto de la API (uvicorn en main.py suele ir en 8000)
+  "forwardPorts": [8000],
+  "remoteUser": "root"
+}
